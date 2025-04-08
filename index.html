@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prashant Kumar - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* [Your existing CSS remains unchanged] */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0d0d1a 0%, #1a1a2e 100%);
+            color: #e0e0e0;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .particles {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(91, 192, 235, 0.5);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(91, 192, 235, 0.7);
+            animation: float 7s infinite ease-in-out, fadePulse 3s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-30vh) translateX(15px); }
+        }
+
+        @keyframes fadePulse {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.8; }
+        }
+
+        .nav-container {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 3rem;
+            background: linear-gradient(90deg, rgba(13, 13, 26, 0.95), rgba(29, 29, 48, 0.85));
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 3px 15px rgba(91, 192, 235, 0.15);
+            border-bottom: 1px solid rgba(91, 192, 235, 0.2);
+        }
+
+        .nav-brand {
+            font-size: 1.8rem;
+            color: #5bc0eb;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            position: relative;
+            animation: glow 1.5s infinite;
+            text-transform: uppercase;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 6px #5bc0eb; }
+            50% { text-shadow: 0 0 15px #5bc0eb, 0 0 25px #3da9d9; }
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 400;
+            position: relative;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+            border-radius: 20px;
+        }
+
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #5bc0eb, #3da9d9);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width 0.4s ease;
+            border-radius: 2px;
+        }
+
+        .nav-menu a:hover::before,
+        .nav-menu a.active::before {
+            width: 60%;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #5bc0eb;
+            text-shadow: 0 0 10px rgba(91, 192, 235, 0.5);
+            background: rgba(91, 192, 235, 0.05);
+        }
+
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 7rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 50%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-greeting {
+            font-size: 2rem;
+            color: #5bc0eb;
+            animation: fadeInUp 1s ease-out;
+            letter-spacing: 2px;
+            font-weight: 400;
+        }
+
+        .hero-name {
+            font-size: 5.5rem;
+            color: #fff;
+            line-height: 1.1;
+            text-shadow: 0 0 25px rgba(91, 192, 235, 0.7);
+            animation: fadeInUp 1.3s ease-out 0.3s backwards;
+            font-weight: 700;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            color: #5bc0eb;
+            margin: 1rem 0;
+            animation: typing 3.5s steps(20) forwards, blink 0.8s step-end infinite;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 5px solid #5bc0eb;
+            font-weight: 600;
+        }
+
+        .hero-bio {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            margin-top: 1rem;
+            font-weight: 400;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        .social-links {
+            display: flex;
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            font-size: 2.2rem;
+            color: #5bc0eb;
+            transition: all 0.5s;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            transform: rotate(360deg) scale(1.4);
+            text-shadow: 0 0 20px #5bc0eb, 0 0 30px #3da9d9;
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 7rem;
+            width: 450px;
+            height: 450px;
+            background: url('profile.jpg') center/cover;
+            border-radius: 50%;
+            border: 5px solid #5bc0eb;
+            box-shadow: 0 0 50px rgba(91, 192, 235, 0.5), inset 0 0 25px rgba(91, 192, 235, 0.3);
+            animation: floatImage 4s infinite ease-in-out, rotateGlow 8s infinite linear;
+            z-index: 1;
+        }
+
+        @keyframes floatImage {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-35px); }
+        }
+
+        @keyframes rotateGlow {
+            0% { box-shadow: 0 0 50px rgba(91, 192, 235, 0.5); }
+            50% { box-shadow: 0 0 70px rgba(91, 192, 235, 0.7); }
+            100% { box-shadow: 0 0 50px rgba(91, 192, 235, 0.5); }
+        }
+
+        footer {
+            padding: 5rem;
+            text-align: center;
+            background: rgba(13, 13, 26, 0.95);
+            position: relative;
+            border-top: 1px solid rgba(91, 192, 235, 0.3);
+        }
+
+        footer p {
+            font-size: 1.2rem;
+            color: #5bc0eb;
+            text-shadow: 0 0 15px rgba(91, 192, 235, 0.4);
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+
+    <nav class="nav-container">
+        <div class="nav-brand">Prashant Kumar</div>
+        <div class="nav-menu">
+            <a href="index.html" class="active">Home</a>
+            <a href="skills.html">Skills</a>
+            <a href="services.html">Services</a>
+            <a href="journey.html">Journey</a>
+            <a href="projects.html">Projects</a>
+            <a href="testimonials.html">Testimonials</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <p class="hero-greeting">Greetings, I'm</p>
+            <h1 class="hero-name">Prashant Kumar</h1>
+            <p class="hero-title">Web Developer</p>
+            <p class="hero-bio">B.Tech CSE 3rd Year Student at AKTU</p>
+            <div class="social-links">
+                <a href="https://github.com/PrashantKumar249" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/prashant-kumar-singh132/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://codepen.io" target="_blank"><i class="fa-brands fa-codepen"></i></a>
+            </div>
+        </div>
+        <div class="hero-image"></div>
+    </section>
+
+    <footer>
+        <p>© 2025 Prashant Kumar | Engineered with Vision</p>
+    </footer>
+
+    <script>
+        const particleContainer = document.getElementById('particles');
+        for (let i = 0; i < 40; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            const size = Math.random() * 15 + 8;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.top = `${Math.random() * 100}vh`;
+            particle.style.animationDelay = `${Math.random() * 5}s`;
+            particle.style.animationDuration = `${Math.random() * 5 + 5}s`;
+            particleContainer.appendChild(particle);
+        }
+    </script>
+</body>
+</html>
