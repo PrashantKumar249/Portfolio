@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prashant Kumar - Skills</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0d0d1a 0%, #1a1a2e 100%);
+            color: #e0e0e0;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .particles {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(91, 192, 235, 0.5);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(91, 192, 235, 0.7);
+            animation: float 7s infinite ease-in-out, fadePulse 3s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-30vh) translateX(15px); }
+        }
+
+        @keyframes fadePulse {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.8; }
+        }
+
+        .nav-container {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: clamp(0.8rem, 2vw, 1rem) clamp(1rem, 3vw, 3rem);
+            background: linear-gradient(90deg, rgba(13, 13, 26, 0.95), rgba(29, 29, 48, 0.85));
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 3px 15px rgba(91, 192, 235, 0.15);
+            border-bottom: 1px solid rgba(91, 192, 235, 0.2);
+        }
+
+        .nav-brand {
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            color: #5bc0eb;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            animation: glow 1.5s infinite;
+            text-transform: uppercase;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 6px #5bc0eb; }
+            50% { text-shadow: 0 0 15px #5bc0eb, 0 0 25px #3da9d9; }
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: clamp(0.8rem, 2vw, 1.5rem);
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+            font-weight: 400;
+            padding: 0.5rem clamp(0.5rem, 1.5vw, 1rem);
+            transition: all 0.3s ease;
+            border-radius: 20px;
+        }
+
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #5bc0eb, #3da9d9);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width 0.4s ease;
+            border-radius: 2px;
+        }
+
+        .nav-menu a:hover::before,
+        .nav-menu a.active::before {
+            width: 60%;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #5bc0eb;
+            text-shadow: 0 0 10px rgba(91, 192, 235, 0.5);
+            background: rgba(91, 192, 235, 0.05);
+        }
+
+        .section {
+            padding: clamp(4rem, 10vw, 8rem) clamp(1rem, 5vw, 7rem);
+            position: relative;
+            background: linear-gradient(to bottom, rgba(13, 13, 26, 0.3), transparent);
+            min-height: 100vh;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            color: #5bc0eb;
+            text-align: center;
+            margin-bottom: clamp(2rem, 8vw, 5rem);
+            text-shadow: 0 0 20px rgba(91, 192, 235, 0.4);
+            font-weight: 700;
+        }
+
+        .section-title::after {
+            content: '';
+            width: clamp(100px, 20vw, 150px);
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #5bc0eb, transparent);
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: stretch 2.5s infinite;
+        }
+
+        @keyframes stretch {
+            0%, 100% { width: clamp(100px, 20vw, 150px); }
+            50% { width: clamp(150px, 30vw, 220px); }
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 30vw, 200px), 1fr));
+            gap: clamp(1.5rem, 4vw, 3rem);
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .skill-item {
+            background: rgba(91, 192, 235, 0.2);
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.5s;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(91, 192, 235, 0.4);
+        }
+
+        .skill-item::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(91, 192, 235, 0.4) 20%, transparent 70%);
+            transition: all 0.7s;
+            opacity: 0;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-20px) scale(1.1);
+            box-shadow: 0 0 30px rgba(91, 192, 235, 0.6);
+        }
+
+        .skill-item:hover::before {
+            top: -50%;
+            left: -50%;
+            opacity: 1;
+        }
+
+        .skill-item span {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            color: #e0e0e0;
+            position: relative;
+            z-index: 1;
+            font-weight: 400;
+        }
+
+        footer {
+            padding: clamp(2rem, 5vw, 5rem);
+            text-align: center;
+            background: rgba(13, 13, 26, 0.95);
+            border-top: 1px solid rgba(91, 192, 235, 0.3);
+        }
+
+        footer p {
+            font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+            color: #5bc0eb;
+            text-shadow: 0 0 15px rgba(91, 192, 235, 0.4);
+            font-weight: 400;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: #5bc0eb;
+            cursor: pointer;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(13, 13, 26, 0.95);
+                padding: 1rem;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(clamp(120px, 40vw, 150px), 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                padding: clamp(2rem, 8vw, 4rem) clamp(0.5rem, 3vw, 1rem);
+            }
+
+            .skill-item {
+                padding: clamp(1rem, 3vw, 1.5rem);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+
+    <nav class="nav-container">
+        <div class="nav-brand">Prashant Kumar</div>
+        <button class="hamburger"><i class="fas fa-bars"></i></button>
+        <div class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="skills.html" class="active">Skills</a>
+            <a href="services.html">Services</a>
+            <a href="journey.html">Journey</a>
+            <a href="projects.html">Projects</a>
+            <a href="testimonials.html">Testimonials</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <section class="section">
+        <h2 class="section-title">Skill Matrix</h2>
+        <div class="skills-grid">
+            <div class="skill-item"><span>HTML5</span></div>
+            <div class="skill-item"><span>CSS3</span></div>
+            <div class="skill-item"><span>JavaScript</span></div>
+            <div class="skill-item"><span>PHP</span></div>
+            <div class="skill-item"><span>Python</span></div>
+            <div class="skill-item"><span>Git</span></div>
+            <div class="skill-item"><span>UI/UX Design</span></div>
+            <div class="skill-item"><span>MySQL</span></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Prashant Kumar | Engineered with Vision</p>
+    </footer>
+
+    <script>
+        const particleContainer = document.getElementById('particles');
+        for (let i = 0; i < 40; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            const size = Math.random() * 15 + 8;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.top = `${Math.random() * 100}vh`;
+            particle.style.animationDelay = `${Math.random() * 5}s`;
+            particle.style.animationDuration = `${Math.random() * 5 + 5}s`;
+            particleContainer.appendChild(particle);
+        }
+
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
