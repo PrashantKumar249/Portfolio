@@ -7,17 +7,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
   <style>
-    /* Reset & Fonts */
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-
     body {
       background: linear-gradient(135deg, #0d0d1a 0%, #1a1a2e 100%);
       color: #e0e0e0;
       overflow-x: hidden;
       position: relative;
     }
-
-    /* Particles */
     .particles {
       position: fixed;
       width: 100%;
@@ -25,7 +21,6 @@
       pointer-events: none;
       z-index: -1;
     }
-
     .particle {
       position: absolute;
       background: rgba(91, 192, 235, 0.5);
@@ -33,18 +28,14 @@
       box-shadow: 0 0 15px rgba(91, 192, 235, 0.7);
       animation: float 7s infinite ease-in-out, fadePulse 3s infinite;
     }
-
     @keyframes float {
       0%, 100% { transform: translateY(0) translateX(0); }
       50% { transform: translateY(-30vh) translateX(15px); }
     }
-
     @keyframes fadePulse {
       0%, 100% { opacity: 0.2; }
       50% { opacity: 0.8; }
     }
-
-    /* Navigation */
     .nav-container {
       position: fixed;
       top: 0;
@@ -59,7 +50,6 @@
       box-shadow: 0 3px 15px rgba(91, 192, 235, 0.15);
       border-bottom: 1px solid rgba(91, 192, 235, 0.2);
     }
-
     .nav-brand {
       font-size: 1.5rem;
       color: #5bc0eb;
@@ -68,72 +58,42 @@
       animation: glow 1.5s infinite;
       text-transform: uppercase;
     }
-
     @keyframes glow {
       0%, 100% { text-shadow: 0 0 6px #5bc0eb; }
       50% { text-shadow: 0 0 15px #5bc0eb, 0 0 25px #3da9d9; }
     }
-
     .nav-menu {
       display: flex;
       gap: 1.5rem;
       align-items: center;
     }
-
     .nav-menu a {
       color: #e0e0e0;
       text-decoration: none;
       font-size: 1rem;
       transition: 0.3s;
-      position: relative;
     }
-
     .nav-menu a:hover,
     .nav-menu a.active {
       color: #5bc0eb;
       text-shadow: 0 0 10px rgba(91, 192, 235, 0.5);
     }
-
-    /* Section Styling */
     .section {
       padding: 6rem 2rem 4rem;
       min-height: 100vh;
-      background: linear-gradient(to bottom, rgba(13, 13, 26, 0.3), transparent);
     }
-
     .section-title {
       font-size: 3rem;
       color: #5bc0eb;
       text-align: center;
       margin-bottom: 4rem;
       text-shadow: 0 0 20px rgba(91, 192, 235, 0.4);
-      position: relative;
     }
-
-    .section-title::after {
-      content: '';
-      width: 150px;
-      height: 4px;
-      background: linear-gradient(90deg, transparent, #5bc0eb, transparent);
-      position: absolute;
-      bottom: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      animation: stretch 2.5s infinite;
-    }
-
-    @keyframes stretch {
-      0%, 100% { width: 150px; }
-      50% { width: 220px; }
-    }
-
-    /* Timeline */
     .experience-timeline {
       max-width: 1000px;
       margin: 0 auto;
       position: relative;
     }
-
     .experience-timeline::before {
       content: '';
       position: absolute;
@@ -143,7 +103,6 @@
       left: 50%;
       transform: translateX(-50%);
     }
-
     .exp-item {
       background: rgba(91, 192, 235, 0.2);
       padding: 1.5rem;
@@ -151,17 +110,9 @@
       margin: 2rem 0;
       position: relative;
       width: 45%;
-      transition: 0.4s;
     }
-
-    .exp-item:nth-child(odd) {
-      margin-right: auto;
-    }
-
-    .exp-item:nth-child(even) {
-      margin-left: auto;
-    }
-
+    .exp-item:nth-child(odd) { margin-right: auto; }
+    .exp-item:nth-child(even) { margin-left: auto; }
     .exp-item::before {
       content: '';
       position: absolute;
@@ -172,49 +123,22 @@
       top: 50%;
       transform: translateY(-50%);
     }
-
-    .exp-item:nth-child(odd)::before {
-      right: -30px;
-    }
-
-    .exp-item:nth-child(even)::before {
-      left: -30px;
-    }
-
-    .exp-item:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(91, 192, 235, 0.5);
-    }
-
-    .exp-item h3 a {
-      color: #5bc0eb;
-      text-decoration: none;
-    }
-
-    .exp-item .date {
-      color: #3da9d9;
-      font-size: 0.95rem;
-      margin: 0.5rem 0;
-    }
-
-    .exp-item p {
-      font-size: 0.95rem;
-    }
-
+    .exp-item:nth-child(odd)::before { right: -30px; }
+    .exp-item:nth-child(even)::before { left: -30px; }
+    .exp-item h3 a { color: #5bc0eb; text-decoration: none; }
+    .exp-item .date { color: #3da9d9; font-size: 0.95rem; margin: 0.5rem 0; }
+    .exp-item p { font-size: 0.95rem; }
     footer {
       padding: 2rem;
       text-align: center;
       background: rgba(13, 13, 26, 0.95);
       border-top: 1px solid rgba(91, 192, 235, 0.3);
     }
-
     footer p {
       font-size: 1rem;
       color: #5bc0eb;
       text-shadow: 0 0 15px rgba(91, 192, 235, 0.4);
     }
-
-    /* Hamburger for small devices */
     .hamburger {
       display: none;
       font-size: 2rem;
@@ -223,7 +147,6 @@
       color: #5bc0eb;
       cursor: pointer;
     }
-
     @media (max-width: 768px) {
       .nav-menu {
         display: none;
@@ -235,35 +158,20 @@
         background: rgba(13, 13, 26, 0.95);
         padding: 1rem;
       }
-
-      .nav-menu.active {
-        display: flex;
-      }
-
-      .hamburger {
-        display: block;
-      }
-
-      .experience-timeline::before {
-        left: 20px;
-      }
-
+      .nav-menu.active { display: flex; }
+      .hamburger { display: block; }
+      .experience-timeline::before { left: 20px; }
       .exp-item {
         width: 100%;
         margin-left: 40px;
       }
-
       .exp-item:nth-child(odd)::before,
-      .exp-item:nth-child(even)::before {
-        left: -30px;
-      }
+      .exp-item:nth-child(even)::before { left: -30px; }
     }
   </style>
 </head>
 <body>
   <div class="particles" id="particles"></div>
-
-  <!-- Navigation -->
   <nav class="nav-container">
     <div class="nav-brand">Prashant Kumar</div>
     <button class="hamburger"><i class="fas fa-bars"></i></button>
@@ -276,8 +184,6 @@
       <a href="contact.html">Contact</a>
     </div>
   </nav>
-
-  <!-- Journey Section -->
   <section class="section">
     <h2 class="section-title">Learning Journey</h2>
     <div class="experience-timeline">
@@ -303,13 +209,9 @@
       </div>
     </div>
   </section>
-
-  <!-- Footer -->
   <footer>
     <p>© 2025 Prashant Kumar | Engineered with Vision</p>
   </footer>
-
-  <!-- JS: Particles + Nav -->
   <script>
     const particleContainer = document.getElementById('particles');
     for (let i = 0; i < 40; i++) {
@@ -324,7 +226,6 @@
       particle.style.animationDuration = `${Math.random() * 5 + 5}s`;
       particleContainer.appendChild(particle);
     }
-
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
