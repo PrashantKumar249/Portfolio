@@ -7,14 +7,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    /* All CSS same as your dark theme */
-    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
     body {
-      background: linear-gradient(135deg, #0d0d1a 0%, #1a1a2e 100%);
+      background: linear-gradient(135deg, #0d0d1a, #1a1a2e);
       color: #e0e0e0;
-      overflow-x: hidden;
-      position: relative;
     }
 
     .nav-container {
@@ -22,12 +24,11 @@
       top: 0;
       width: 100%;
       padding: 1rem 2rem;
-      background: linear-gradient(90deg, rgba(13, 13, 26, 0.95), rgba(29, 29, 48, 0.85));
-      backdrop-filter: blur(10px);
-      z-index: 1000;
+      background: rgba(13, 13, 26, 0.95);
       display: flex;
       justify-content: space-between;
       align-items: center;
+      z-index: 1000;
       border-bottom: 1px solid rgba(91, 192, 235, 0.2);
     }
 
@@ -35,14 +36,13 @@
       font-size: 1.5rem;
       color: #5bc0eb;
       font-weight: 700;
-      letter-spacing: 1.5px;
       animation: glow 1.5s infinite;
       text-transform: uppercase;
     }
 
     @keyframes glow {
-      0%, 100% {text-shadow: 0 0 6px #5bc0eb;}
-      50% {text-shadow: 0 0 15px #5bc0eb, 0 0 25px #3da9d9;}
+      0%, 100% { text-shadow: 0 0 6px #5bc0eb; }
+      50% { text-shadow: 0 0 15px #5bc0eb, 0 0 25px #3da9d9; }
     }
 
     .nav-menu {
@@ -64,6 +64,15 @@
       text-shadow: 0 0 10px rgba(91, 192, 235, 0.5);
     }
 
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: #5bc0eb;
+      cursor: pointer;
+    }
+
     .section {
       padding: 8rem 2rem 4rem;
       min-height: 100vh;
@@ -73,7 +82,7 @@
       font-size: 2.5rem;
       color: #5bc0eb;
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
 
     .contact-form {
@@ -83,11 +92,12 @@
       padding: 2rem;
       border-radius: 15px;
       border: 1px solid rgba(91, 192, 235, 0.3);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
     }
 
     .form-field {
-      width: 100%;
-      margin-bottom: 1.5rem;
       padding: 0.8rem;
       font-size: 1rem;
       color: #e0e0e0;
@@ -103,16 +113,15 @@
     }
 
     .submit-btn {
-      width: 100%;
       background: linear-gradient(45deg, #5bc0eb, #3da9d9);
       color: #0d0d1a;
       border: none;
       padding: 1rem;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       border-radius: 10px;
       cursor: pointer;
-      transition: all 0.3s ease;
       font-weight: 600;
+      transition: 0.3s ease;
     }
 
     .submit-btn:hover {
@@ -123,7 +132,7 @@
     footer {
       text-align: center;
       padding: 2rem;
-      background: rgba(13, 13, 26, 0.9);
+      background: rgba(13, 13, 26, 0.95);
       border-top: 1px solid rgba(91, 192, 235, 0.3);
     }
 
@@ -132,23 +141,15 @@
       font-size: 1rem;
     }
 
-    .hamburger {
-      display: none;
-      font-size: 2rem;
-      background: none;
-      border: none;
-      color: #5bc0eb;
-    }
-
     @media (max-width: 768px) {
       .nav-menu {
         display: none;
         flex-direction: column;
         background: #0d0d1a;
-        position: absolute;
         width: 100%;
-        left: 0;
+        position: absolute;
         top: 100%;
+        left: 0;
         padding: 1rem;
       }
 
@@ -180,15 +181,11 @@
   <section class="section">
     <h2 class="section-title">Connect with Me</h2>
     <form class="contact-form" action="https://formsubmit.co/prashantkumarbgs22@gmail.com" method="POST">
-      <!-- Replace above with your real email -->
       <input type="text" class="form-field" name="name" placeholder="Your Name" required>
       <input type="email" class="form-field" name="email" placeholder="Your Email" required>
       <textarea class="form-field" name="message" rows="5" placeholder="Your Message" required></textarea>
-      
-      <!-- Optional: redirect after submission -->
       <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html" />
       <input type="hidden" name="_captcha" value="false" />
-
       <button type="submit" class="submit-btn">Send Message</button>
     </form>
   </section>
@@ -198,7 +195,6 @@
   </footer>
 
   <script>
-    // Hamburger toggle
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     hamburger.addEventListener('click', () => {
