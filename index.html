@@ -7,14 +7,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
   <style>
-    /* -- (CSS remains same as your original, no change made to design) -- */
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
     body {
       background: linear-gradient(135deg, #0d0d1a 0%, #1a1a2e 100%);
       color: #e0e0e0;
       overflow-x: hidden;
       position: relative;
     }
+
     .particles {
       position: fixed;
       width: 100%;
@@ -22,6 +28,7 @@
       pointer-events: none;
       z-index: -1;
     }
+
     .particle {
       position: absolute;
       background: rgba(91, 192, 235, 0.5);
@@ -29,14 +36,17 @@
       box-shadow: 0 0 15px rgba(91, 192, 235, 0.7);
       animation: float 7s infinite ease-in-out, fadePulse 3s infinite;
     }
+
     @keyframes float {
       0%, 100% { transform: translateY(0) translateX(0); }
       50% { transform: translateY(-30vh) translateX(15px); }
     }
+
     @keyframes fadePulse {
       0%, 100% { opacity: 0.2; }
       50% { opacity: 0.8; }
     }
+
     .nav-container {
       position: fixed;
       top: 0;
@@ -51,6 +61,7 @@
       box-shadow: 0 3px 15px rgba(91, 192, 235, 0.15);
       border-bottom: 1px solid rgba(91, 192, 235, 0.2);
     }
+
     .nav-brand {
       font-size: 1.8rem;
       color: #5bc0eb;
@@ -59,15 +70,18 @@
       animation: glow 1.5s infinite;
       text-transform: uppercase;
     }
+
     @keyframes glow {
       0%, 100% { text-shadow: 0 0 6px #5bc0eb; }
       50% { text-shadow: 0 0 15px #5bc0eb, 0 0 25px #3da9d9; }
     }
+
     .nav-menu {
       display: flex;
       gap: 1.5rem;
       align-items: center;
     }
+
     .nav-menu a {
       color: #e0e0e0;
       text-decoration: none;
@@ -77,24 +91,31 @@
       transition: all 0.3s ease;
       border-radius: 20px;
     }
+
     .nav-menu a:hover,
     .nav-menu a.active {
       color: #5bc0eb;
       text-shadow: 0 0 10px rgba(91, 192, 235, 0.5);
       background: rgba(91, 192, 235, 0.05);
     }
+
     .hero-section {
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: row;
       align-items: center;
-      padding: 0 7rem;
-      position: relative;
+      justify-content: space-between;
+      padding: 8rem 7rem 4rem;
+      flex-wrap: wrap;
     }
+
     .hero-content {
-      max-width: 50%;
+      flex: 1;
+      min-width: 300px;
+      max-width: 600px;
       z-index: 2;
     }
+
     .hero-greeting {
       font-size: 2rem;
       color: #5bc0eb;
@@ -102,16 +123,18 @@
       letter-spacing: 2px;
       font-weight: 400;
     }
+
     .hero-name {
-      font-size: 5.5rem;
+      font-size: 4rem;
       color: #fff;
       line-height: 1.1;
       text-shadow: 0 0 25px rgba(91, 192, 235, 0.7);
       animation: fadeInUp 1.3s ease-out 0.3s backwards;
       font-weight: 700;
     }
+
     .hero-title {
-      font-size: 2.5rem;
+      font-size: 2rem;
       color: #5bc0eb;
       margin: 1rem 0;
       animation: typing 3.5s steps(20) forwards, blink 0.8s step-end infinite;
@@ -120,16 +143,19 @@
       border-right: 5px solid #5bc0eb;
       font-weight: 600;
     }
+
     .hero-bio {
       font-size: 1.2rem;
       color: #e0e0e0;
       margin-top: 1rem;
       font-weight: 400;
     }
+
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     @keyframes typing { from { width: 0; } to { width: 100%; } }
     @keyframes blink { 50% { border-color: transparent; } }
 
@@ -138,33 +164,35 @@
       gap: 2rem;
       margin-top: 2rem;
     }
+
     .social-links a {
       font-size: 2rem;
       color: #5bc0eb;
       transition: all 0.5s;
       text-decoration: none;
     }
+
     .social-links a:hover {
       transform: rotate(360deg) scale(1.4);
       text-shadow: 0 0 20px #5bc0eb, 0 0 30px #3da9d9;
     }
 
     .hero-image {
-      position: absolute;
-      right: 7rem;
-      width: 400px;
-      height: 400px;
+      width: 350px;
+      height: 350px;
       background: url('profile.jpg') center/cover;
       border-radius: 50%;
       border: 5px solid #5bc0eb;
       box-shadow: 0 0 50px rgba(91, 192, 235, 0.5), inset 0 0 25px rgba(91, 192, 235, 0.3);
       animation: floatImage 4s infinite ease-in-out, rotateGlow 8s infinite linear;
-      z-index: 1;
+      margin-top: 3rem;
     }
+
     @keyframes floatImage {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-35px); }
     }
+
     @keyframes rotateGlow {
       0% { box-shadow: 0 0 50px rgba(91, 192, 235, 0.5); }
       50% { box-shadow: 0 0 70px rgba(91, 192, 235, 0.7); }
@@ -177,11 +205,55 @@
       background: rgba(13, 13, 26, 0.95);
       border-top: 1px solid rgba(91, 192, 235, 0.3);
     }
+
     footer p {
       font-size: 1.2rem;
       color: #5bc0eb;
       text-shadow: 0 0 15px rgba(91, 192, 235, 0.4);
       font-weight: 400;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-section {
+        padding: 6rem 3rem 3rem;
+      }
+
+      .hero-name {
+        font-size: 3rem;
+      }
+
+      .hero-title {
+        font-size: 1.8rem;
+      }
+
+      .hero-image {
+        width: 280px;
+        height: 280px;
+        margin: 2rem auto 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        padding: 1rem;
+      }
+
+      .nav-menu {
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 0.5rem;
+      }
+
+      .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 7rem 2rem 3rem;
+      }
+
+      .hero-content {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
