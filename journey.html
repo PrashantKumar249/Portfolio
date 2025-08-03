@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prashant Kumar - Journey</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
     body {
       background: linear-gradient(135deg, #0d0d1a 0%, #1a1a2e 100%);
       color: #e0e0e0;
       overflow-x: hidden;
       position: relative;
     }
+
     .particles {
       position: fixed;
       width: 100%;
@@ -21,6 +29,7 @@
       pointer-events: none;
       z-index: -1;
     }
+
     .particle {
       position: absolute;
       background: rgba(91, 192, 235, 0.5);
@@ -28,14 +37,31 @@
       box-shadow: 0 0 15px rgba(91, 192, 235, 0.7);
       animation: float 7s infinite ease-in-out, fadePulse 3s infinite;
     }
+
     @keyframes float {
-      0%, 100% { transform: translateY(0) translateX(0); }
-      50% { transform: translateY(-30vh) translateX(15px); }
+
+      0%,
+      100% {
+        transform: translateY(0) translateX(0);
+      }
+
+      50% {
+        transform: translateY(-30vh) translateX(15px);
+      }
     }
+
     @keyframes fadePulse {
-      0%, 100% { opacity: 0.2; }
-      50% { opacity: 0.8; }
+
+      0%,
+      100% {
+        opacity: 0.2;
+      }
+
+      50% {
+        opacity: 0.8;
+      }
     }
+
     .nav-container {
       position: fixed;
       top: 0;
@@ -50,6 +76,7 @@
       box-shadow: 0 3px 15px rgba(91, 192, 235, 0.15);
       border-bottom: 1px solid rgba(91, 192, 235, 0.2);
     }
+
     .nav-brand {
       font-size: 1.5rem;
       color: #5bc0eb;
@@ -58,30 +85,43 @@
       animation: glow 1.5s infinite;
       text-transform: uppercase;
     }
+
     @keyframes glow {
-      0%, 100% { text-shadow: 0 0 6px #5bc0eb; }
-      50% { text-shadow: 0 0 15px #5bc0eb, 0 0 25px #3da9d9; }
+
+      0%,
+      100% {
+        text-shadow: 0 0 6px #5bc0eb;
+      }
+
+      50% {
+        text-shadow: 0 0 15px #5bc0eb, 0 0 25px #3da9d9;
+      }
     }
+
     .nav-menu {
       display: flex;
       gap: 1.5rem;
       align-items: center;
     }
+
     .nav-menu a {
       color: #e0e0e0;
       text-decoration: none;
       font-size: 1rem;
       transition: 0.3s;
     }
+
     .nav-menu a:hover,
     .nav-menu a.active {
       color: #5bc0eb;
       text-shadow: 0 0 10px rgba(91, 192, 235, 0.5);
     }
+
     .section {
       padding: 6rem 2rem 4rem;
       min-height: 100vh;
     }
+
     .section-title {
       font-size: 3rem;
       color: #5bc0eb;
@@ -89,11 +129,13 @@
       margin-bottom: 4rem;
       text-shadow: 0 0 20px rgba(91, 192, 235, 0.4);
     }
+
     .experience-timeline {
       max-width: 1000px;
       margin: 0 auto;
       position: relative;
     }
+
     .experience-timeline::before {
       content: '';
       position: absolute;
@@ -103,6 +145,7 @@
       left: 50%;
       transform: translateX(-50%);
     }
+
     .exp-item {
       background: rgba(91, 192, 235, 0.2);
       padding: 1.5rem;
@@ -111,8 +154,15 @@
       position: relative;
       width: 45%;
     }
-    .exp-item:nth-child(odd) { margin-right: auto; }
-    .exp-item:nth-child(even) { margin-left: auto; }
+
+    .exp-item:nth-child(odd) {
+      margin-right: auto;
+    }
+
+    .exp-item:nth-child(even) {
+      margin-left: auto;
+    }
+
     .exp-item::before {
       content: '';
       position: absolute;
@@ -123,22 +173,43 @@
       top: 50%;
       transform: translateY(-50%);
     }
-    .exp-item:nth-child(odd)::before { right: -30px; }
-    .exp-item:nth-child(even)::before { left: -30px; }
-    .exp-item h3 a { color: #5bc0eb; text-decoration: none; }
-    .exp-item .date { color: #3da9d9; font-size: 0.95rem; margin: 0.5rem 0; }
-    .exp-item p { font-size: 0.95rem; }
+
+    .exp-item:nth-child(odd)::before {
+      right: -30px;
+    }
+
+    .exp-item:nth-child(even)::before {
+      left: -30px;
+    }
+
+    .exp-item h3 a {
+      color: #5bc0eb;
+      text-decoration: none;
+    }
+
+    .exp-item .date {
+      color: #3da9d9;
+      font-size: 0.95rem;
+      margin: 0.5rem 0;
+    }
+
+    .exp-item p {
+      font-size: 0.95rem;
+    }
+
     footer {
       padding: 2rem;
       text-align: center;
       background: rgba(13, 13, 26, 0.95);
       border-top: 1px solid rgba(91, 192, 235, 0.3);
     }
+
     footer p {
       font-size: 1rem;
       color: #5bc0eb;
       text-shadow: 0 0 15px rgba(91, 192, 235, 0.4);
     }
+
     .hamburger {
       display: none;
       font-size: 2rem;
@@ -147,6 +218,7 @@
       color: #5bc0eb;
       cursor: pointer;
     }
+
     @media (max-width: 768px) {
       .nav-menu {
         display: none;
@@ -158,18 +230,32 @@
         background: rgba(13, 13, 26, 0.95);
         padding: 1rem;
       }
-      .nav-menu.active { display: flex; }
-      .hamburger { display: block; }
-      .experience-timeline::before { left: 20px; }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .experience-timeline::before {
+        left: 20px;
+      }
+
       .exp-item {
         width: 100%;
         margin-left: 40px;
       }
+
       .exp-item:nth-child(odd)::before,
-      .exp-item:nth-child(even)::before { left: -30px; }
+      .exp-item:nth-child(even)::before {
+        left: -30px;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="particles" id="particles"></div>
   <nav class="nav-container">
@@ -188,19 +274,27 @@
     <h2 class="section-title">Learning Journey</h2>
     <div class="experience-timeline">
       <div class="exp-item">
+        <h3><a href="" target="_blank">Online Food Ordering System</a></h3>
+        <p class="date">2025 - Present</p>
+        <p>Developed using HTML, Tailwind CSS, JavaScript, AJAX, PHP, and MySQL. Supports live menu browsing, user
+          login, cart, wishlist, and order management with dynamic UI and backend integration.</p>
+      </div>
+      <div class="exp-item">
         <h3><a href="https://agecalculator1.free.nf/?i=1" target="_blank">Age Calculator App</a></h3>
         <p class="date">2025</p>
-        <p>Built with HTML, CSS, and PHP. Calculates exact age from birthdate input and handles backend using PHP. Hosted live.</p>
+        <p>Built with HTML, CSS, and PHP. Calculates exact age from birthdate input and handles backend using PHP.
+          Hosted live.</p>
+      </div>
+      <div class="exp-item">
+        <h3>College Online Voting System</h3>
+        <p class="date">2024</p>
+        <p>Developed a secure online voting platform using PHP and MySQL as a major academic project.</p>
       </div>
       <div class="exp-item">
         <h3><a href="https://lnkd.in/gqxP-6Wh" target="_blank">Calculator App</a></h3>
         <p class="date">2023</p>
-        <p>A functional calculator created using HTML, CSS & JavaScript. Designed to perform all basic arithmetic operations.</p>
-      </div>
-      <div class="exp-item">
-        <h3>College Online Voting System</h3>
-        <p class="date">2024 - Present</p>
-        <p>Developed a secure online voting platform using PHP and MySQL as a major academic project.</p>
+        <p>A functional calculator created using HTML, CSS & JavaScript. Designed to perform all basic arithmetic
+          operations.</p>
       </div>
       <div class="exp-item">
         <h3>Web Development Basics</h3>
@@ -234,4 +328,5 @@
     );
   </script>
 </body>
+
 </html>
